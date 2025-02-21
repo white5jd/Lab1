@@ -1,0 +1,38 @@
+﻿@page
+@model Lab1Final.Pages.Grants.ManageGrantsModel
+@{
+    ViewData["Title"] = "Grant Listing";
+}
+
+<h2>User View</h2>
+<h3>Grants</h3>
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Grant Name:</th>
+            <th>Submission Date:</th>
+            <th>Award Amount:</th>
+            <th>Grant Status:</th>
+            <th>Grant Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var Grant in Model.Grantss)  // Loop through Model.Users
+            {
+                <tr>
+                    <td>@Grant.grantName</td>
+                    <td>@Grant.submissionDate</td>
+                    <td>@Grant.awardAmount</td>
+                    <td>@Grant.grantStatus</td>
+                    <td>@Grant.grantCategory</td>
+                </tr>
+            }
+        }
+    </tbody>
+
+    <br />
+    <br />
+
+
+    <a href="@Url.Page("/ManageGrants/NewGrant")" class="btn btn-primary mt-3">Create New Grant</a>

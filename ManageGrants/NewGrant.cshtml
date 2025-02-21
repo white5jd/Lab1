@@ -1,0 +1,54 @@
+﻿@page
+@model Lab1Final.Pages.ManageGrants.ManageGrantsModel
+@{
+    ViewData["Title"] = "New Grant";
+}
+
+<h2>Create New Grant</h2>
+
+<form asp-page="NewGrant">
+    <div class="mb-3">
+        <label asp-for="TempGrant.grantName" class="form-label"></label>
+        <input asp-for="TempGrant.grantName" class="form-control" required />
+        <span asp-validation-for="TempGrant.grantName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempGrant.submissionDate" class="form-label"></label>
+        <input asp-for="TempGrant.submissionDate" class="form-control" required />
+        <span asp-validation-for="TempGrant.submissionDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempGrant.awardDate" class="form-label"></label>
+        <input asp-for="TempGrant.awardDate" class="form-control" required />
+        <span asp-validation-for="TempGrant.awardDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempGrant.awardAmount" class="form-label"></label>
+        <input asp-for="TempGrant.awardAmount" type="number" step="0.01" class="form-control" required />
+        <span asp-validation-for="TempGrant.awardAmount" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempGrant.grantStatus" class="form-label"></label>
+        <input asp-for="TempGrant.grantStatus" class="form-control" required />
+        <span asp-validation-for="TempGrant.grantStatus" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempGrant.grantCategory" class="form-label"></label>
+        <input asp-for="TempGrant.grantCategory" class="form-control" required />
+        <span asp-validation-for="TempGrant.grantCategory" class="text-danger"></span>
+    </div>
+
+    <button asp-page="" asp-page-handler="PopulateHandler" formnovalidate>Populate</button>
+    <br />
+
+    <button asp-page="" asp-page-handler="ClearHandler" formnovalidate>Clear</button>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <br />
+    <br />
+</form>

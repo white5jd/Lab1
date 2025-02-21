@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">CIS 484 System</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<br />
+
+Josh White and Nadeem Hudson
+
+<br />
+
+<h2 class="mb-4">Login</h2>
+
+<form method="post" asp-page="/Home/HomePage">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" class="form-control" />
+    </div>
+    <span class="ms-2">Do not enter anything, Please select from Admin or Faculty for now.</span>
+</form>
+
+
+<br />
+<br />
+<br />
+
+<a href="/Admin/AdminHome"><button type="button" class="btn btn-primary">Temp Admin Login - View Users</button></a>
+<br />
+<br />
+<a href="/Faculty/FacultyHome"><button type="button" class="btn btn-primary">Temp Faculty Login - View Grants and Projects</button></a>

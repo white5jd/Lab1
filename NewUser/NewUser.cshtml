@@ -1,0 +1,47 @@
+﻿@page
+@model Lab1Final.Pages.NewUserModel
+@{
+    ViewData["Title"] = "Create New User";
+}
+
+<h2>Create New User</h2>
+
+<form asp-page="NewUser">
+    <div class="mb-3">
+        <label asp-for="TempUser.firstName" class="form-label"></label>
+        <input asp-for="TempUser.firstName" class="form-control" required/>
+    
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempUser.lastName" class="form-label"></label>
+        <input asp-for="TempUser.lastName" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempUser.email" class="form-label"></label>
+        <input asp-for="TempUser.email" type="email" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempUser.phoneNumber" class="form-label"></label>
+        <input asp-for="TempUser.phoneNumber" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempUser.role" class="form-label"></label>
+        <input asp-for="TempUser.role" class="form-control" required />
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+    <br />
+    <br />
+
+    <button asp-page="" asp-page-handler="ClearHandler" formnovalidate>Clear</button>
+
+    <br />
+    <br />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

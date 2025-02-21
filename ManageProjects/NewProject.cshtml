@@ -1,0 +1,26 @@
+﻿@page
+@model Lab1Final.Pages.ManageProjects.NewProjectModel
+@{
+}
+<form asp-page="NewProject">
+    <div class="mb-3">
+        <label asp-for="TempProject.projectName" class="form-label">Project Name</label>
+        <input asp-for="TempProject.projectName" class="form-control" required />
+        <span asp-validation-for="TempProject.projectName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TempProject.projectDueDate" class="form-label">Project Due Date</label>
+        <input asp-for="TempProject.projectDueDate" class="form-control" required />
+        <span asp-validation-for="TempProject.projectDueDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <!-- Buttons for Populate and Clear -->
+        <button type="submit" asp-page-handler="PopulateHandler" class="btn btn-secondary" formnovalidate>Populate</button>
+        <button type="submit" asp-page-handler="ClearHandler" class="btn btn-secondary" formnovalidate>Clear</button>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

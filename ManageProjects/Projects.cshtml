@@ -1,0 +1,39 @@
+﻿@page
+@model Lab1Final.Pages.Projects.ManageProjectsModel
+@{
+    ViewData["Title"] = "Project Listing";
+}
+
+<h2>User View</h2>
+<h3>Projects</h3>
+<br />
+
+<a href="@Url.Page("/ManageProjects/NewProject")" class="btn btn-primary mt-3">Create New Project</a>
+
+<br />
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Project Name:</th>
+            <th>Project Due Date:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var Project in Model.Projectss)  // Loop through Model.Users
+            {
+                <tr>
+                    <td>@Project.projectName</td>
+                    <td>@Project.projectDueDate</td>
+                </tr>
+            }
+        }
+     
+    </table>
+
+
+    <br />
+    <br />
+
+
